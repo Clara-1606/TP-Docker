@@ -4,9 +4,8 @@ LABEL maintainer="clara.vesval@ynov.com"
 
 RUN apt-get update
 RUN apt install -y nginx
-RUN apt install -y git
-RUN rm -rf /var/www/html/*
-RUN git clone https://github.com/diranetafen/static-website-example /var/www/html
+
+ADD static-website-example /var/www/html
 
 EXPOSE 80
 
