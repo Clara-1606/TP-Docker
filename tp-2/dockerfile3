@@ -1,0 +1,12 @@
+FROM nginx
+#Maintainer of image
+LABEL maintainer=" clara.vesval@ynov.com"
+
+RUN apt-get update
+RUN apt install -y git
+RUN rm -rf /usr/share/nginx/html/*
+RUN git clone https://github.com/diranetafen/static-website-example /usr/share/nginx/html
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
+
