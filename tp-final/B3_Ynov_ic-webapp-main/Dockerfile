@@ -8,8 +8,8 @@ LABEL maintainer.n6="helie.levydemareuil@ynov.com"
 
 RUN pip install -U Flask
 
-ENV ODOO_URL='https://www.google.com/''
-ENV PGADMIN_URL='https://www.google.com/'
+ENV ODOO_URL='https://www.odoo.com/fr_FR'
+ENV PGADMIN_URL='https://www.pgadmin.org/'
 
 WORKDIR /opt
 COPY . /opt
