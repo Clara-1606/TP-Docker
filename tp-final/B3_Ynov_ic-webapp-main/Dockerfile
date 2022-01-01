@@ -6,13 +6,13 @@ LABEL maintainer.n4="frederic.gabriel@ynov.com"
 LABEL maintainer.n5="yoann.degaram@ynov.com"
 LABEL maintainer.n6="helie.levydemareuil@ynov.com"
 
-
-RUN apt-get update -y 
-RUN pip install flask flask_httpauth flask_simpleldap python-dotenv
+RUN pip install -U Flask
 
 ENV ODOO_URL='https://www.google.com/''
 ENV PGADMIN_URL='https://www.google.com/'
 
-EXPOSE 8080/tcp
+WORKDIR /opt
+COPY . /opt
+EXPOSE 8080
 
-CMD ["python", "./app.py"]
+ENTRYPOINT ["python", "./app.py"]
